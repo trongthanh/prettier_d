@@ -1,6 +1,6 @@
 {
   "name": "@trongthanh/prettier_d",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Makes prettier fast",
   "bin": {
     "prettier_d": "lib/bin/prettier_d.js"
