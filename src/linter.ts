@@ -63,11 +63,9 @@ function parseArguments(args: string[]) {
 
         // Added by prettier_d_slim.
         'color',
-        'stdin',
       ],
     }) as Options & {
       // Added by prettier_d_slim.
-      stdin?: boolean
       stdinFilepath?: string
       // Alternate way of passing text
       text?: string
@@ -78,7 +76,7 @@ function parseArguments(args: string[]) {
 
       // Used in prettier cli.
       configPrecedence?: string
-    },
+    }
   )
 
   if (parsedOptions.stdinFilepath) {
@@ -156,7 +154,7 @@ export const invoke = (
       break
   }
 
-  if (parsedOptions.stdin && parsedOptions.filepath) {
+  if (parsedOptions.filepath) {
     options.filepath = parsedOptions.filepath
   }
 

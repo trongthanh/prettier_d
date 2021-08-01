@@ -21,19 +21,20 @@ function main() {
   }
 
   const args = process.argv.slice(2)
-  if (args.indexOf('--stdin') > -1) {
-    let text = ''
-    process.stdin.setEncoding('utf8')
-    process.stdin.on('data', (chunk) => {
-      text += chunk
-    })
-    process.stdin.on('end', () => {
-      coreD.invoke(args, text)
-    })
-    return
+  if (args.indexOf('--text') > -1) {
+    // file content from --text param
+    return coreD.invoke(args);
   }
+  // take file content from stdin
 
-  coreD.invoke(args)
+  let text = ''
+  process.stdin.setEncoding('utf8')
+  process.stdin.on('data', (chunk) => {
+    text += chunk
+  })
+  process.stdin.on('end', () => {
+    coreD.invoke(args, text)
+  })
 }
 
 main()
