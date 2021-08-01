@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-process.env.CORE_D_TITLE = 'prettier_d_slim'
-process.env.CORE_D_DOTFILE = '.prettier_d_slim'
+process.env.CORE_D_TITLE = 'prettier_d'
+process.env.CORE_D_DOTFILE = '.prettier_d'
 process.env.CORE_D_SERVICE = require.resolve('../linter')
 
 // Needs to be imported after env vars are set.

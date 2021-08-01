@@ -1,28 +1,34 @@
 {
-  "name": "prettier_d_slim",
+  "name": "@trongthanh/prettier_d",
   "version": "1.1.0",
   "description": "Makes prettier fast",
   "bin": {
-    "prettier_d_slim": "lib/bin/prettier_d_slim.js"
+    "prettier_d": "lib/bin/prettier_d.js"
   },
   "keywords": [
     "prettier",
     "daemon"
   ],
   "author": "Mike Wyatt <wyatt.mike@gmail.com>",
-  "contributors": [],
-  "homepage": "https://github.com/mikew/prettier_d_slim",
-  "scripts": {},
+  "contributors": [
+    "Thanh Tran <trongthanh@gmail.com>"
+  ],
+  "homepage": "https://github.com/trongthanh/prettier_d",
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "chmod +x lib/bin/prettier_d.js",
+    "release": "npm publish --access public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikew/prettier_d_slim.js.git"
+    "url": "https://github.com/trongthanh/prettier_d.git"
   },
   "dependencies": {
     "camelize": "^1.0.0",
     "core_d": "^3.2.0",
     "minimist": "^1.2.0",
     "nanolru": "^1.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.2",
     "resolve": "^1.8.1"
   },
   "files": [
@@ -33,15 +39,15 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@types/minimist": "^1.2.0",
-    "@types/node": "^14.14.31",
-    "@types/prettier": "^2.2.2",
-    "@types/resolve": "^1.20.0",
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
-    "eslint": "^7.21.0",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^16.4.9",
+    "@types/prettier": "^2.3.2",
+    "@types/resolve": "^1.20.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "typescript": "^4.2.3"
+    "typescript": "^4.3.5"
   }
 }
