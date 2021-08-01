@@ -1,8 +1,8 @@
 # \@trongthanh/prettier_d
 
-### forked from `prettier_d_slim`
-
 Makes [prettier][] fast.
+
+**Forked and improved from `prettier_d_slim`** but with a slight change to default params.
 
 ## "But prettier is pretty fast already, right?"
 
@@ -21,19 +21,34 @@ This will install the `@trongthanh/prettier_d` command globally:
 $ npm install -g @trongthanh/prettier_d
 ```
 
+This will create a global command `prettier_d`
+
 ## Usage
 
 To start the server and lint a file, just run:
 
 ```bash
-# Prettier needs to know the file name to do its thing.
-$ cat file.js | prettier_d --stdin --stdin-filepath file.js
+# Prettier needs to know the file name to do its thing (input default from stdin)
+$ cat file.js | prettier_d --stdin-filepath file.js
 # Or if you already have the content of the file:
 $ prettier_d --stdin-filepath file.js --text 'const foo = {}'
 ```
 
 On the initial call, the `prettier_d` server is launched and then the given file
 is formatted. Subsequent invocations are super fast.
+
+## HOWTO: Integrate with Sublime Text
+
+The whole reason I forked and improved this package is because I need it to work with Sublime Text
+
+- Install `@trongthanh/prettier_d`.
+- Check where the `prettier_d` executable is with `$ which prettier_d`
+  + For macOS with Home Brew Node.js & npm, it locates at `/usr/local/bin/prettier_d`
+  + For Ubuntu* with apt-get Node.js & npm, it locates at `/usr/bin/prettier_d`
+- In Sublime Text, install `JsPrettier` via Package Control
+- Open JsPrettier Settings - User, scroll down to (or add to if not exist) setting entry `"prettier_cli_path"`.
+- Set the absolute path to `prettier_d` executable discovered from above step.
+- Sublime Text should now use `prettier_d` to format prettier's supported file types and it's much faster than default `prettier` cli.
 
 ## How does this work?
 
