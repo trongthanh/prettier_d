@@ -1,4 +1,4 @@
-# \@trongthanh/prettier_d
+# \@trongthanh/prettier_d  [![npm package](https://img.shields.io/npm/v/@trongthanh/prettier_d?color=yellow)](https://www.npmjs.com/package/@trongthanh/prettier_d)
 
 Makes [prettier][] fast.
 
